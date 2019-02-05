@@ -65,6 +65,18 @@ const articleController = {
                 res.json(err);
             })
     },
+    // add on 2/5/19
+    getOne: function (req, res) {
+        const articleId = req.params.id;
+
+        db.Article.findOneAndUpdate({_id: articleId})
+            .populate('articles')
+            .then(function (dbArticle) {
+                res.json(dbArticle);
+            }).catch(function (err) {
+                res.json(err);
+            })
+    },
     create: function (req, res) {
         db.Article.create(req.body)
             .then(function (dbArticle) {
@@ -93,7 +105,7 @@ const articleController = {
     },
     delete: function (req, res) {
         const articleId = req.params.id
-        db.Article.delete(
+        db.Article.destroy(
             { _id: articleId },
             {
                 $set: {
