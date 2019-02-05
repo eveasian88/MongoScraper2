@@ -65,6 +65,18 @@ const articleController = {
                 res.json(err);
             })
     },
+    // add on 2/5/19
+    getOne: function (req, res) {
+        const articleId = req.params.id;
+
+        db.Article.findOneAndUpdate({_id: articleId})
+            .populate('articles')
+            .then(function (dbArticle) {
+                res.json(dbArticle);
+            }).catch(function (err) {
+                res.json(err);
+            })
+    },
     create: function (req, res) {
         db.Article.create(req.body)
             .then(function (dbArticle) {
@@ -91,13 +103,14 @@ const articleController = {
           res.json(err);
         })
     },
+    // added on 2/5/2019
     delete: function (req, res) {
         const articleId = req.params.id
-        db.Article.delete(
+        db.Article.destroy(
             { _id: articleId },
             {
                 $set: {
-                    saved: true
+                    saved: false
                 }
             }
         )
@@ -111,25 +124,3 @@ const articleController = {
 };
 
 module.exports = articleController;
-
-
-
-
-// app.post("/api/articles/:id", function(req, res) {
-
-//   db.Article.create(req.body)
-//     .then(function(dbArticle){
-//       return db.Article.findOneAndUpdate({},{
-//         $push: {
-//           articles: req.params.id
-//         }},
-//         {
-//           new: true
-//         });
-//     }).then(function(dbArticle){
-//       res.json(dbArticle)
-//     }).catch(function(err){
-//       res.json(err);
-//     })
-// });
-// };

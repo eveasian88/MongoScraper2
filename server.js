@@ -20,6 +20,7 @@ const mongoose = require("mongoose");
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/populate";
 console.log(MONGODB_URI);
+
 // Configure mongoose with MongoDB
 // mongoose.connect( DATABASE_URL, { useNewUrlParser: true, useCreateIndex: true } );
 
