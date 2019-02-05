@@ -17,7 +17,7 @@
 $('#scrape-btn').on('click', function () {
     $.ajax({
         method: "GET",
-        url: "/scrape"
+        url: "api/scrape"
     })
         .then(function (data) {
             console.log(data);
