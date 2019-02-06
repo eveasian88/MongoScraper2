@@ -13,7 +13,7 @@ is a web application that utilizes Mongoose and Cheerio to scrape articles from 
 
 
 
-![mongoScraper](public/images/coffeePassport.jpg "mongoScraper")
+![mongoScraper](public/images/mongoScraper.gif "mongoScraper")
 
 
 
