@@ -65,7 +65,7 @@ const articleController = {
                 res.json(err);
             })
     },
-    // add on 2/5/19
+    // added on 2/5/19
     getOne: function (req, res) {
         const articleId = req.params.id;
 
@@ -104,13 +104,31 @@ const articleController = {
         })
     },
     // added on 2/5/2019
+    unsave: function (req, res) {
+        const articleId = req.params.id
+          db.Article.update(
+            { _id: articleId },
+            {
+              $set: {
+                saved: false
+              }
+            }
+          )
+          .then(function(dbArticle){
+            res.json(dbArticle)
+          })
+          .catch(function(err){
+            res.json(err);
+          })
+      },
+    // added on 2/5/2019
     delete: function (req, res) {
         const articleId = req.params.id
         db.Article.destroy(
             { _id: articleId },
             {
                 $set: {
-                    saved: false
+                    saved: true
                 }
             }
         )

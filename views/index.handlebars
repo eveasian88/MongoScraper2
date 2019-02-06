@@ -24,11 +24,9 @@
     {{#if articles }}
       {{#each articles }}
         {{#if this.saved }}
-        {{!-- {{#unless this.unsaved }} --}}
-
+       
           {{> article_partial }}
 
-        {{!-- {{/unless}} --}}
         {{/if }}
       {{/each}}
     {{/if }}
