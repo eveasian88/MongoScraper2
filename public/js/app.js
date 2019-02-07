@@ -50,7 +50,7 @@ $('#notes').on("click", '.save-btn', function () {
     console.log(thisId);
 
     $.ajax({
-        method: "PUT",
+        method: "POST",
         url: "/api/notes/" + thisId + "/save",
     })
         .then(function (data) {
@@ -67,7 +67,7 @@ $('#saved-notes').on("click", '.unsave-btn', function () {
     console.log(thisId)
 
     $.ajax({
-        method: "PUT",
+        method: "POST",
         url: "/api/notes/" + thisId + "/unsave",
     })
         .then(function (data) {
