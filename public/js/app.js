@@ -11,7 +11,6 @@ $('#scrape-btn').on('click', function () {
 
 
 $('#articles').on("click", '.save-btn', function () {
-    // var thisId = $(this).closest('div.card').attr("data-id");
     var thisId = this.dataset.id.trim();
     var thisCard = $(this).closest('div.card');
     console.log(thisId);
@@ -28,8 +27,8 @@ $('#articles').on("click", '.save-btn', function () {
 });
 
 $('#saved-articles').on("click", '.unsave-btn', function () {
-    console.log('working')
-    //var thisId = $(this).closest('div.card').attr("data-id");
+    console.log('unsave-btn working', unsave);
+    
     var thisId = this.dataset.id.trim();
     console.log(thisId)
 
@@ -45,6 +44,22 @@ $('#saved-articles').on("click", '.unsave-btn', function () {
 });
 
 // add save notes here and add CRUD
+$('#saved-notes').on("click", '.save-note-btn',
+function() {
+    console.log('save notes working')
+
+    var thisID = this.dataset.id.trim();
+    console.log(thisId)
+
+    $.ajax({
+        method: "PUT",
+        url: "api/notes" + thisId + "/save",
+    })
+        .then(function(data) {
+            console.log(data);
+            location.reload();
+        })
+})
 
 
 $('#saved-toggle').click(function () {
@@ -54,6 +69,3 @@ $('#saved-toggle').click(function () {
 $('#show-toggle').click(function () {
     $('#articles').slideToggle();
 })
-
-
-
