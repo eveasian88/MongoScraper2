@@ -9,6 +9,7 @@ $('#scrape-btn').on('click', function () {
         });
 })
 
+
 $('#articles').on("click", '.save-btn', function () {
     // var thisId = $(this).closest('div.card').attr("data-id");
     var thisId = this.dataset.id.trim();
@@ -26,13 +27,15 @@ $('#articles').on("click", '.save-btn', function () {
 
 });
 
-$('#saved-articles').on("click", '.del-save-btn', function () {
+$('#saved-articles').on("click", '.unsave-btn', function () {
     console.log('working')
-    var thisId = $(this).closest('div.card').attr("data-id");
+    //var thisId = $(this).closest('div.card').attr("data-id");
+    var thisId = this.dataset.id.trim();
+    console.log(thisId)
 
     $.ajax({
         method: "PUT",
-        url: "/api/unsaved/" + thisId + "/unsave",
+        url: "/api/articles/" + thisId + "/unsave",
     })
         .then(function (data) {
             console.log(data);
