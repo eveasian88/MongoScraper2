@@ -44,6 +44,8 @@ $('#saved-articles').on("click", '.unsave-btn', function () {
 
 });
 
+// add save notes here and add CRUD
+
 
 $('#saved-toggle').click(function () {
     $('#saved-articles').slideToggle();
