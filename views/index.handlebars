@@ -1,7 +1,7 @@
 {{> navbar_partial }}
 
 <!-- page content -->
-<div class="container">
+<div class="container"> --}}
 
   <!-- jumbotron header -->
   <header class="jumbotron text-center">
@@ -9,7 +9,7 @@
     {{!-- <div class="overlay"></div>
     <div class="background-image"></div> --}}
 
-    <h1>{{msg}}</h1>
+    {{!-- {{!-- <h1>{{msg}}</h1> --}}
 
     <h1 class="display-3 text-white">Mongo Scraper</h1>
     <p class="lead text-white">ThoughtCo. Edition</p>
@@ -25,9 +25,9 @@
     {{#each articles }}
     {{#if this.saved }}
 
-    {{!-- {{#unless this.unsaved }} --}}
+    
     {{> article_partial }}
-    {{!-- {{/unless}} --}}
+   
 
     {{/if }}
     {{/each}}
@@ -41,7 +41,9 @@
 
     {{#each articles}}
     {{#unless this.saved}}
+
     {{> article_partial }}
+    
     {{/unless}}
     {{/each }}
   </div>

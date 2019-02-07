@@ -65,18 +65,18 @@ const articleController = {
                 res.json(err);
             })
     },
-    // added on 2/5/19
-    getOne: function (req, res) {
-        const articleId = req.params.id;
+    // // added on 2/5/19
+    // getOne: function (req, res) {
+    //     const articleId = req.params.id;
 
-        db.Article.findOneAndUpdate({_id: articleId})
-            .populate('articles')
-            .then(function (dbArticle) {
-                res.json(dbArticle);
-            }).catch(function (err) {
-                res.json(err);
-            })
-    },
+    //     db.Article.findOneAndUpdate({_id: articleId})
+    //         .populate('articles')
+    //         .then(function (dbArticle) {
+    //             res.json(dbArticle);
+    //         }).catch(function (err) {
+    //             res.json(err);
+    //         })
+    // },
     create: function (req, res) {
         db.Article.create(req.body)
             .then(function (dbArticle) {
@@ -105,7 +105,9 @@ const articleController = {
     },
     // added on 2/5/2019
     unsave: function (req, res) {
+        console.log("unsave");
         const articleId = req.params.id
+        console.log(articleId);
           db.Article.update(
             { _id: articleId },
             {
@@ -121,6 +123,7 @@ const articleController = {
             res.json(err);
           })
       },
+      // added on 2/5/2019
     delete: function (req, res) {
         const articleId = req.params.id
         db.Article.destroy(
@@ -138,8 +141,6 @@ const articleController = {
             res.json(err);
         })
     },
-
 };
-
 
 module.exports = articleController;

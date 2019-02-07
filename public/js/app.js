@@ -15,7 +15,6 @@ $('#articles').on("click", '.save-btn', function () {
     var thisId = this.dataset.id.trim();
     var thisCard = $(this).closest('div.card');
     console.log(thisId);
-    console.log(thisCard.find('h4').text());
 
     $.ajax({
         method: "PUT",
@@ -28,9 +27,11 @@ $('#articles').on("click", '.save-btn', function () {
 
 });
 
-$('#saved-articles').on("click", '.del-save-btn', function () {
+$('#saved-articles').on("click", '.unsave-btn', function () {
     console.log('working')
-    var thisId = $(this).closest('div.card').attr("data-id");
+    //var thisId = $(this).closest('div.card').attr("data-id");
+    var thisId = this.dataset.id.trim();
+    console.log(thisId)
 
     $.ajax({
         method: "PUT",
@@ -51,4 +52,6 @@ $('#saved-toggle').click(function () {
 $('#show-toggle').click(function () {
     $('#articles').slideToggle();
 })
+
+
 
