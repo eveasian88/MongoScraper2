@@ -17,7 +17,7 @@ header {
     font-weight:700;
 }
 
-.save-btn {
+.save-btn, .unsave-btn {
     color: white !important;
 }
 
