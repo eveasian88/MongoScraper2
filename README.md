@@ -37,7 +37,7 @@ is a web application that utilizes Cheerio and Mongoose to scrape articles from 
 
 ## Mobile Responsive
 
-![mongoScraper](public/images/mongoScraperMobile.gif "mongoScraperMobile")
+![mongoScraper](public/images/mongoScraperMobileDesktop.gif "mongoScraperMobile")
 
 
 ## Author

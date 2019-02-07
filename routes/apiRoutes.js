@@ -13,9 +13,9 @@ router.put("/articles/:id/unsave", articleController.unsave);
 router.delete("/articles:id/delete", articleController.delete );
 
 router.post("/notes", noteController.create );
-router.post("/notes/:id/save", noteController.save );
-router.post("/notes/:id/unsave", noteController.unsave);
+router.put("/notes/:id/save", noteController.save );
+router.put("/notes/:id/unsave", noteController.unsave);
 router.delete("/notes:id/delete", noteController.delete );
 
-// export router to the rest of the project.
+// export router to the rest of the project
 module.exports = router;
