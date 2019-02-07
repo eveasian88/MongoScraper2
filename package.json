@@ -8,7 +8,7 @@
   },
   "author": "Susye Weng-Reeder",
   "license": "ISC",
-  "homepage": "https://github.com/eveasian88/MongoScraper#readme",
+  "homepage": "https://github.com/eveasian88/MongoScraper2#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",

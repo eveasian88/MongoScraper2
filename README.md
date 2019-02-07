@@ -5,6 +5,7 @@ is a web application that utilizes Mongoose and Cheerio to scrape articles from 
 
 
 ## Getting Started
+<<<<<<< HEAD
 
 - Clone Repo
 - Run command in Terminal "npm install"
@@ -14,8 +15,16 @@ is a web application that utilizes Mongoose and Cheerio to scrape articles from 
 
 
 ![mongoScraper](public/images/mongoScraper.gif "mongoScraper")
+=======
+>>>>>>> 1fd2c0e8f577e0d0019afdb44bd0bc60032c7269
+
+- Clone Repo
+- Run command in Terminal "npm install"
+- Run command "npm start"
+- Run "ctrl + c" to exit mode
 
 
+![mongoScraper](public/images/mongoScraper.gif "mongoScraper")
 
 
 ## Technologies Utilized
@@ -35,7 +44,11 @@ is a web application that utilizes Mongoose and Cheerio to scrape articles from 
 - Deployment
     - Heroku
 
+
 ## Author
 
 - Susye Weng-Reeder - *JavaScript/ Node.js/ Express/ Mongoose/ Heroku* - [Susye Weng-Reeder](https://eveasian88.github.io/Professional-Portfolio/ "Susye's Portfolio")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1fd2c0e8f577e0d0019afdb44bd0bc60032c7269
