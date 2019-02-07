@@ -27,7 +27,7 @@ $('#articles').on("click", '.save-btn', function () {
 });
 
 $('#saved-articles').on("click", '.unsave-btn', function () {
-    console.log('unsave-btn working');
+    console.log('unsave btn working');
     
     var thisId = this.dataset.id.trim();
     console.log(thisId)
