@@ -58,7 +58,7 @@ header {
 
 @media only screen and (max-width: 479px) {
 	/****mobile portrait 320 ****/
-    #notesSquare {
+    #bodyInput {
     height: 300px;
     width: 300px;
 }

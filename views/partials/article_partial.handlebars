@@ -3,7 +3,7 @@
     <img class='card-img-top' src="{{ this.image }}" alt=''>
     <div class='card-body'>
       <a href="{{ this.link }}">
-        <h4 class='card-title'> {{ this.title }} </h4>
+        <h4 id="modal-article-title" class='card-title'> {{ this.title }} </h4>
       </a>
       <p class='card-text'></p>
     </div>
@@ -32,17 +32,17 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Article Notes</h5>
+              <h5 class="modal-title" id="noteModalLabel">Article Notes</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <textarea id="notesSquare" rows="8" cols="30"></textarea>
+              <textarea id="bodyInput" rows="8" cols="50"></textarea>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="save-note-btn btn btn-warning">Save Notes</button>
+              <button type="button" id="saveNotes" class="save-note-btn btn btn-warning">Save Notes</button>
             </div>
           </div>
         </div>

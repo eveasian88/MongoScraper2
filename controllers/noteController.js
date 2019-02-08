@@ -5,6 +5,7 @@ var cheerio = require("cheerio");
 var PAGE_URL = "https://www.thoughtco.com/languages-4133094";
 
 const noteController = {
+  
     getAll: function (req, res) {
         db.Note.find({})
             .then(function (dbNote) {
