@@ -10,12 +10,13 @@ router.get("/articles/:id", articleController.getById );
 router.post("/articles", articleController.create );
 router.put("/articles/:id/save", articleController.save );
 router.put("/articles/:id/unsave", articleController.unsave);
+router.put("/articles/:id/update_note", articleController.updateNote);
 router.delete("/articles:id/delete", articleController.delete );
 
-router.post("/notes", noteController.create );
-router.put("/notes/:id/save", noteController.save );
-router.put("/notes/:id/unsave", noteController.unsave);
-router.delete("/notes:id/delete", noteController.delete );
+// router.post("/articles/notes", noteController.create );
+// router.put("/articles/notes/:id/save", noteController.save );
+// router.put("/articles/notes/:id/unsave", noteController.unsave);
+// router.delete("/articles/notes:id/delete", noteController.delete );
 
 // export router to the rest of the project
 module.exports = router;

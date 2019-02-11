@@ -74,42 +74,67 @@ const articleController = {
                 res.json(err);
             })
     },
-    save: function (req, res) {
-      const articleId = req.params.id
-        db.Article.update(
-          { _id: articleId },
-          {
-            $set: {
-              saved: true
+
+    updateNote: function(req, res) {
+        // taking a string and saving on an article with a specific Id
+        // /api/articles/:id/update_note
+        // NEED: note body, Article ID
+        const { id } = req.params;
+        const { noteBody } = req.body;
+
+        db.Article.update( 
+            { _id: id },
+            {
+                $set: {
+                    note: noteBody,
+                }
             }
-          }
         )
-        .then(function(dbArticle){
-          res.json(dbArticle)
+        .then(function (dbArticle) {
+            res.json(dbArticle)
         })
-        .catch(function(err){
-          res.json(err);
+        .catch(function (err) {
+            res.json(err);
         })
+
+    },
+
+    save: function (req, res) {
+        const articleId = req.params.id
+        db.Article.update(
+            { _id: articleId },
+            {
+                $set: {
+                    saved: true
+                }
+            }
+        )
+            .then(function (dbArticle) {
+                res.json(dbArticle)
+            })
+            .catch(function (err) {
+                res.json(err);
+            })
     },
     unsave: function (req, res) {
         console.log("unsave");
         const articleId = req.params.id
         console.log(articleId);
-          db.Article.update(
+        db.Article.update(
             { _id: articleId },
             {
-              $set: {
-                saved: false
-              }
+                $set: {
+                    saved: false
+                }
             }
-          )
-          .then(function(dbArticle){
-            res.json(dbArticle)
-          })
-          .catch(function(err){
-            res.json(err);
-          })
-      },
+        )
+            .then(function (dbArticle) {
+                res.json(dbArticle)
+            })
+            .catch(function (err) {
+                res.json(err);
+            })
+    },
     delete: function (req, res) {
         const articleId = req.params.id
         db.Article.destroy(
@@ -120,12 +145,12 @@ const articleController = {
                 }
             }
         )
-        .then(function(dbArticle){
-            res.json(dbArticle)
-        })
-        .catch(function(err){
-            res.json(err);
-        })
+            .then(function (dbArticle) {
+                res.json(dbArticle)
+            })
+            .catch(function (err) {
+                res.json(err);
+            })
     },
 };
 
