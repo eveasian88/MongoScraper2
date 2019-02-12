@@ -57,7 +57,8 @@ $.getJSON("/api/articles", function(data) {
   $(document).on("click", "#saveNote", function() {
     // grab the id associated with the article from the submit button
 
-    var thisId = $(this).attr("data-articleId");
+    var thisId = $(this).attr("articleId");
+    console.log(event.target);
 
     console.error('thisId :: ', thisId );
   
@@ -76,17 +77,38 @@ $.getJSON("/api/articles", function(data) {
       .then(function(data) {
         // Log the response
         console.log(data);
+        $("#bodyInput").val() = "";
         // empty the notes section
         // $("#notes").empty();
       });
+
   });
 
-$(".open-modal").click(function(event) {
-    console.log('OPEN!!');
+
+  
+  
+$(".open-modal").on("click", function(event) {
+    console.log('OPEN Modal !!');
     console.log(event.target.dataset.id);
     const { id, note } = event.target.dataset
     $("#bodyInput").val(note);
-    $("#saveNote").data('articleId', id)
+    //$("#saveNote").data('articleId', id)
+    $("#saveNote").attr("articleId" , event.target.dataset.id);
+
+
+    $.ajax({
+        method: "GET",
+        url: "/api/articles/"
+      })
+        .then(function(data) {
+          console.log(data);
+          let newData = data.filter( item =>{
+           return item._id == event.target.dataset.id
+          })
+          console.log(newData[0].note);
+          $("#bodyInput").val(newData[0].note)
+        });
+    
 });
   
 

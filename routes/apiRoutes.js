@@ -11,7 +11,10 @@ router.post("/articles", articleController.create );
 router.put("/articles/:id/save", articleController.save );
 router.put("/articles/:id/unsave", articleController.unsave);
 router.put("/articles/:id/update_note", articleController.updateNote);
-router.delete("/articles:id/delete", articleController.delete );
+
+router.put("/articles/:id/delete_note", articleController.updateNote);
+
+router.delete("/articles/:id/delete", articleController.delete );
 
 // router.post("/articles/notes", noteController.create );
 // router.put("/articles/notes/:id/save", noteController.save );

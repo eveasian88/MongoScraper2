@@ -74,7 +74,6 @@ const articleController = {
                 res.json(err);
             })
     },
-
     updateNote: function(req, res) {
         // taking a string and saving on an article with a specific Id
         // /api/articles/:id/update_note
@@ -96,8 +95,62 @@ const articleController = {
         .catch(function (err) {
             res.json(err);
         })
-
     },
+    deleteNote: function(req, res) {
+        // taking a string and saving on an article with a specific Id
+        // /api/articles/:id/update_note
+        // NEED: note body, Article ID
+        const { id } = req.params;
+
+        db.Article.update( 
+            { _id: id },
+            {
+                $set: {
+                    note: "",
+                }
+            }
+        )
+        .then(function (dbArticle) {
+            res.json(dbArticle)
+        })
+        .catch(function (err) {
+            res.json(err);
+        })
+    },
+
+    create: function (req, res) {
+        db.Note.create(req.body)
+            .then(function (dbNote) {
+                res.json(dbNote)
+            })
+            .catch(function (err) {
+                res.json(err);
+            })
+    },
+
+    // deleteNote: function(req, res) {
+    //     // taking a string and saving on an article with a specific Id
+    //     // /api/articles/:id/update_note
+    //     // NEED: note body, Article ID
+    //     const { id } = req.params;
+    //     const { noteBody } = req.body;
+
+    //     db.Note.remove( 
+    //         { _id: id },
+    //         {
+    //             $set: {
+    //                 note: noteBody,
+    //             }
+    //         }
+    //     )
+    //     .then(function (dbArticle) {
+    //         res.json(dbArticle)
+    //     })
+    //     .catch(function (err) {
+    //         res.json(err);
+    //     })
+    // },
+
 
     save: function (req, res) {
         const articleId = req.params.id
