@@ -48,7 +48,8 @@ $.getJSON("/api/articles", function(data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
       // Display the apropos information on the page
-      $("#articles").append("<textarea bodyInput='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</textarea>");
+      
+      // $("#articles").append("<textarea bodyInput='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</textarea>");
     }
   });
   
